@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+	<title>Số ngày yêu nhau</title>
+</head>
+<body>
+	<h1>Tính số ngày yêu nhau</h1>
+	<div id="days"></div>
+	<form>
+		<label for="date">Ngày bắt đầu yêu nhau:</label>
+		<input type="date" id="date" name="date">
+		<input type="button" value="Tính ngày" onclick="calculateDays()">
+	</form>
+	<script>
+		function calculateDays() {
+	var startDate = moment(document.getElementById("date").value);
+	var endDate = moment();
+	var days = endDate.diff(startDate, 'days');
+	document.getElementById("days").innerHTML = "Hai người đã yêu nhau trong " + days + " ngày";
+}
+	</script>
+</body>
+</html>
